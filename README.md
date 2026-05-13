@@ -15,6 +15,8 @@ Screenshots are available in the `Dashboards/` folder.
 ## ⚙️ Tools Used
 - Power BI
 - DAX measures
+- Microsoft Excel
+- DAX Studio
 
 ## 🔍 Key Insights
 - Fleet utilization is strong (670 trips per truck) but downtime remains high (~40%).
