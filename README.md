@@ -28,15 +28,6 @@ I created multiple SQL views to structure and clean the data before connecting i
 - **vw_CustomerContribution** → Calculates contribution % by customer.  
 - **vw_SafetyRiskSummary** → Summarizes incidents (DOT violations, accidents, complaints).  
 
-### Example Query
-```sql
-CREATE VIEW vw_MonthlyLoadRevenue AS
-SELECT 
-    FORMAT(LoadDate, 'MMM yyyy') AS Month,
-    SUM(Revenue) AS TotalRevenue
-FROM Loads
-GROUP BY FORMAT(LoadDate, 'MMM yyyy');
-
 ## Key Insights
 - Fleet utilization is strong (670 trips per truck) but downtime remains high (~40%).
 - Customer retention is healthy at 84%, yet revenue realization is only ~48% of potential.
