@@ -14,6 +14,7 @@ Screenshots are available in the `Dashboards/` folder.
 
 ## Tools Used
 - Power BI
+- Microsoft SQL Server Management Studio
 - DAX measures
 - Microsoft Excel
 - DAX Studio
