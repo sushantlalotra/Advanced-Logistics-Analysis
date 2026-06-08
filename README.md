@@ -26,7 +26,14 @@ I created multiple SQL views to structure and clean the data before connecting i
 - **vw_MonthlyLoadRevenue** → Aggregates monthly revenue by load.  
 - **vw_LoadRevenueByStatus** → Breaks down revenue by load status (Completed, Cancelled, In Progress).  
 - **vw_CustomerContribution** → Calculates contribution % by customer.  
-- **vw_SafetyRiskSummary** → Summarizes incidents (DOT violations, accidents, complaints).  
+- **vw_SafetyRiskSummary** → Summarizes incidents (DOT violations, accidents, complaints).
+- vw_CustomerRevenueRealization → Calculates Revenue Realization % (Actual ÷ Potential).
+- vw_RevenuePerTrip → Computes average revenue per trip.
+- vw_FuelSurchargeByCustomer → Aggregates total fuel surcharge by customer.
+- vw_RevenuePotentialByTypeStatus → Groups annual revenue potential by customer type and account status.
+- vw_DamageCostPerMileByMonth → Calculates damage cost per mile trend by month.
+
+All SQL scripts are available in the `/SQL` folder.
 
 ## Key Insights
 - Fleet utilization is strong (670 trips per truck) but downtime remains high (~40%).
