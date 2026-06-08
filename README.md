@@ -1,7 +1,7 @@
 # Advanced-Logistics-Analysis
 Power BI dashboards analyzing logistics operations, fleet, drivers, customers, safety, and routes.
 
-## 📌 Pages Included
+## Pages Included
 1. Executive Summary — KPIs & revenue trends
 2. Fleet Performance — truck utilization, downtime, maintenance
 3. Driver Performance — idle hours, on-time %, revenue
@@ -9,22 +9,41 @@ Power BI dashboards analyzing logistics operations, fleet, drivers, customers, s
 5. Safety & Risk — incidents, claims, damage cost
 6. Routes & Operations — transit days, profitability, OD analysis
 
-## 📷 Dashboard Previews
+## Dashboard Previews
 Screenshots are available in the `Dashboards/` folder.
 
-## ⚙️ Tools Used
+## Tools Used
 - Power BI
 - DAX measures
 - Microsoft Excel
 - DAX Studio
 
-## 🔍 Key Insights
+## SQL Integration
+
+This project is powered by SQL Server as the backend.  
+I created multiple SQL views to structure and clean the data before connecting it to Power BI:
+
+- **vw_MonthlyLoadRevenue** → Aggregates monthly revenue by load.  
+- **vw_LoadRevenueByStatus** → Breaks down revenue by load status (Completed, Cancelled, In Progress).  
+- **vw_CustomerContribution** → Calculates contribution % by customer.  
+- **vw_SafetyRiskSummary** → Summarizes incidents (DOT violations, accidents, complaints).  
+
+### Example Query
+```sql
+CREATE VIEW vw_MonthlyLoadRevenue AS
+SELECT 
+    FORMAT(LoadDate, 'MMM yyyy') AS Month,
+    SUM(Revenue) AS TotalRevenue
+FROM Loads
+GROUP BY FORMAT(LoadDate, 'MMM yyyy');
+
+## Key Insights
 - Fleet utilization is strong (670 trips per truck) but downtime remains high (~40%).
 - Customer retention is healthy at 84%, yet revenue realization is only ~48% of potential.
 - Safety incidents are concentrated in cities like Chicago and Miami, with equipment damage driving the highest claim costs.
 - Average transit days are ~2.1, but certain states (TX, MI) show extremes in delivery times.
 
-## 🎯 Use Cases
+## Use Cases
 - Logistics companies can monitor fleet efficiency and safety.
 - Analysts can benchmark customer revenue potential vs actual realization.
 - Students/job seekers can showcase Power BI portfolio projects.
